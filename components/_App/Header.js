@@ -1,16 +1,31 @@
 import { Menu, Icon, Container, Image } from 'semantic-ui-react';
 import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
+import NProgress from 'nprogress';
+
+// NProgress displays/hides the loading progress of a new page
+// This happens by hooking parts of the lifecycle during a route change from one to the other
+Router.onRouteChangeStart = () => NProgress.start()
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 
 // if user = true => show accnt and logout links wrapped in fragments <></> (because multiple components cannot be returned inside of a conditional)
 // else is false => show login and signup links
 function Header() {
+  const router = useRouter();
   const user = false;
+
+  // returns true if route matches the router.pathname
+  function isActive(route) {
+    return route === router.pathname;
+  }
+
   return (
     <Menu secondary fluid id="menu" inverted>
       <Container text>
         <Link href="/" >
-          <Menu.Item header>
+          <Menu.Item header active={isActive("/")}>
             <Image 
             size="medium"
             src="/static/logo_transparent.png"
@@ -20,7 +35,7 @@ function Header() {
         </Link>
 
         <Link href="/cart" >
-          <Menu.Item header>
+          <Menu.Item header active={isActive("/cart")}>
             <Icon
             name="shopping bag" 
             size="large"
@@ -30,7 +45,7 @@ function Header() {
         </Link>
 
         {user && <Link href="/create" >
-          <Menu.Item header>
+          <Menu.Item header active={isActive("/create")}>
             <Icon
             name="plus" 
             size="large"
@@ -41,7 +56,7 @@ function Header() {
         {user ? (
           <>
             <Link href="/account" >
-              <Menu.Item header>
+              <Menu.Item header active={isActive("/account")}>
                 <Icon
                 name="user" 
                 size="large"
@@ -60,8 +75,8 @@ function Header() {
           </>
           ) : (
           <>
-            <Link href="/login" >
-              <Menu.Item header>
+            <Link href="/login">
+              <Menu.Item header active={isActive("/login")}>
                 <Icon
                 name="sign in" 
                 size="large"
@@ -71,7 +86,7 @@ function Header() {
             </Link>
 
             <Link href="/signup" >
-              <Menu.Item header>
+              <Menu.Item header active={isActive("/signup")}>
                 <Icon
                 name="sign in" 
                 size="large"
