@@ -9,13 +9,14 @@ function ProductList({ products }) {
       header: product.name,
       image: product.image,
       meta: `$${product.price}`,
+      // content: product.subtitle,
       color: 'olive',
       fluid: true,
       childKey: product._id,
       href: `/product?_id=${product._id}`
     }))
   }
-  return <Card.Group stackable itemsPerRow="1" centered items={mapProductsToItems(products)}  />;
+  return <Card.Group stackable itemsPerRow="3" centered items={mapProductsToItems(products)}  />;
 }
 
 export default ProductList;

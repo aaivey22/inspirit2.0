@@ -4,6 +4,7 @@
       "options": ["Red", "White", "Red & White"],
       "image": "/static/images/img2bottles.png",
       "name": "Bronze Member",
+      "subtitle": "Test the waters with a simple 2 bottles a month",
       "description": "Bronze members receive 2 bottles a month. Members choose between red, white, or both varietals. Valued over $50!",
       "price": 35.00
   },
@@ -12,6 +13,7 @@
       "options": ["Red", "White", "Red & White"],
       "image": "/static/images/img6bottles.png",
       "name": "Silver Member",
+      "subtitle": "A half-case (6 bottles) is great for the intermediate wine-enthusiast with a curious palette.",
       "description": "Silver members receive 6 bottles a month (half of one case). Members choose between red, white, or both varietals. Valued over $125!",
       "price": 90.00
   },
@@ -20,6 +22,7 @@
       "options": ["Red", "White", "Red & White"],
       "image": "/static/images/img12bottles.png",
       "name": "Gold Member",
+      "subtitle": "Perfect for the sophisticated, our full-case (12 bottles) option is ideal for someone who enjoys group tastings with friends or a complimentary glass with the evening meal.",
       "description": "Gold members receive 12 bottles a month (one full case). Members choose between red, white, or both varietals. Valued over $200!",
       "price": 150.00
   }

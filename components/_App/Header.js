@@ -2,6 +2,7 @@ import { Menu, Icon, Container, Image } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
+import { handleLogout } from '../../utils/auth';
 
 // NProgress displays/hides the loading progress of a new page
 // This happens by hooking parts of the lifecycle during a route change from one to the other
@@ -12,9 +13,12 @@ Router.onRouteChangeError = () => NProgress.done();
 
 // if user = true => show accnt and logout links wrapped in fragments <></> (because multiple components cannot be returned inside of a conditional)
 // else is false => show login and signup links
-function Header() {
+function Header({ user }) {
   const router = useRouter();
-  const user = false;
+  const isRoot = user && user.role === 'root';
+  const isAdmin = user && user.role === 'admin';
+  const isRootOrAdmin = isRoot || isAdmin;
+  console.log(user);
 
   // returns true if route matches the router.pathname
   function isActive(route) {
@@ -44,7 +48,7 @@ function Header() {
           </Menu.Item>
         </Link>
 
-        {user && <Link href="/create" >
+        {isRootOrAdmin && <Link href="/create" >
           <Menu.Item header active={isActive("/create")}>
             <Icon
             name="plus" 
@@ -65,7 +69,7 @@ function Header() {
               </Menu.Item>
             </Link>
 
-            <Menu.Item header>
+            <Menu.Item onClick={handleLogout} header>
               <Icon
               name="sign out" 
               size="large"
