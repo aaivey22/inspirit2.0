@@ -18,7 +18,7 @@ function Header({ user }) {
   const isRoot = user && user.role === 'root';
   const isAdmin = user && user.role === 'admin';
   const isRootOrAdmin = isRoot || isAdmin;
-  console.log(user);
+  // console.log(user);
 
   // returns true if route matches the router.pathname
   function isActive(route) {

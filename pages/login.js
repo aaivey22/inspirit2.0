@@ -37,7 +37,7 @@ function Login() {
       const payload = { ...user };
       const response = await axios.post(url, payload);
       handleLogin(response.data);
-      console.log(user);
+      // console.log(user);
       //Make request to sign up user
     } catch (error) {
       catchErrors(error, setError);

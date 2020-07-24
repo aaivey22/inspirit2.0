@@ -24,7 +24,7 @@ function CartItemList({ products, user, }) {
           basic
           icon="remove"
           floated="right"
-          onClick={() => console.log(p.product._id)}
+          // onClick={() => console.log(p.product._id)}
         />
       )
     }))
