@@ -19,7 +19,7 @@ export default async (req, res) => {
         // 4) --if so, generate token
         if (passwordsMatch) {
             const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-            expiresIn: '7d'})
+            expiresIn: '25d'})
             // 5) send that token to the client
             res.status(200).json(token)
         } else {
