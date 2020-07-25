@@ -2,9 +2,9 @@ import { Header, Icon, Segment, Label } from 'semantic-ui-react';
 
 function AccountHeader({ role, email, name, createdAt }) {
   return (
-    <Segment secondary inverted color="violet">
+    <Segment secondary inverted color="brown" >
       <Label 
-      color="teal"
+      color="olive"
       size="large"
       ribbon
       icon="privacy"
@@ -12,7 +12,7 @@ function AccountHeader({ role, email, name, createdAt }) {
       content={role}
       />
       <Header inverted textAlign="center" as="h1" icon>
-        <Icon name="user" />
+        <Icon circular name="user" />
         {name}
         <Header.Subheader>{email}</Header.Subheader>
         <Header.Subheader>Joined {createdAt}</Header.Subheader>
