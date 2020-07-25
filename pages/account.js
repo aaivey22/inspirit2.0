@@ -8,12 +8,11 @@ import Axios from 'axios';
 // destructure the user of the account that is being accessed and spread the user props into the header and orders components
 // destructure orders and pass it down as a prop
 function Account({ user, orders }) {
-  console.log(orders)
   return (
     <>
       <AccountHeader {...user} />
       <AccountOrders orders={orders} />
-      {user.role === 'root' && <AccountPermissions />}
+      {user.role === "root" && <AccountPermissions />}
     </>
   )
 }
