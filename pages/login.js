@@ -37,7 +37,6 @@ function Login() {
       const payload = { ...user };
       const response = await axios.post(url, payload);
       handleLogin(response.data);
-      // console.log(user);
       //Make request to sign up user
     } catch (error) {
       catchErrors(error, setError);
@@ -50,10 +49,10 @@ function Login() {
   <>
     <Message
     attached
-    icon="privacy"
+    icon="lock"
     header="Welcome Back!"
     content="Log in with email and password"
-    color="blue"
+    color="brown"
     />
     <Form error={Boolean(error)} loading={loading} onSubmit={handleSubmit}>
       <Message
@@ -88,7 +87,7 @@ function Login() {
           disabled={disabled || loading}
           icon="sign in"
           type="submit"
-          color="orange"
+          color="green"
           content="Login"
         />
       </Segment>

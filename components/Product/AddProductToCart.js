@@ -47,20 +47,20 @@ function AddProductToCart({ user, productId }) {
     onChange={e => setQuantity(Number(e.target.value))}
     action={
       user && success ? {
-      color: 'blue',
+      color: 'green',
       content: "Item Added",
-      icon: "plus cart",
+      icon: "shopping bag",
       disabled: true
       } :
       user ? {
-      color: 'orange',
+      color: 'green',
       content: "Add to Cart",
-      icon: "plus cart",
+      icon: "shopping bag",
       loading,
       disabled: loading,
       onClick: handleAddProductToCart
     } : {
-      color: 'blue',
+      color: 'teal',
       content: "Sign Up To Purchase",
       icon: "signup",
       onClick: () => router.push('/signup')

@@ -42,17 +42,17 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
 
   if (products.length === 0) {
     return (
-      <Segment secondary color="teal" inverted textAlign="center"
+      <Segment secondary color="brown" inverted textAlign="center"
       placeholder>
         <Header icon>
           <Icon name="shopping basket" />
-          No products in your shopping bag. Add some!
+          Your shopping bag is empty.
         </Header>
         <div>
           {user ? (
-            <Button color="orange" onClick={() => router.push('/')}>View Products</Button>
+            <Button color="olive" onClick={() => router.push('/')}>View Products</Button>
           ) : (
-            <Button color="blue" onClick={() => router.push('/login')}>Login to Add Products</Button>
+            <Button color="olive" onClick={() => router.push('/login')}>Login to Add Products</Button>
           )}
         </div>
       </Segment>

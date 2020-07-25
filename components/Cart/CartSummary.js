@@ -33,9 +33,9 @@ function CartSummary({ products, handleCheckout, success }) {
           triggerEvent="onClick"
         >
           <Button
-            icon="cart"
+            icon="shopping bag"
             disabled={isCartEmpty || success}
-            color="teal"
+            color="green"
             floated="right"
             content="Checkout"
           />

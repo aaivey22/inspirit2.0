@@ -49,10 +49,10 @@ function Signup() {
   <>
     <Message
     attached
-    icon="settings"
+    icon="magic"
     header="Get Started!"
     content="Create a new account"
-    color="teal"
+    color="brown"
     />
     <Form error={Boolean(error)} loading={loading} onSubmit={handleSubmit}>
       <Message
@@ -97,7 +97,7 @@ function Signup() {
           disabled={disabled || loading}
           icon="signup"
           type="submit"
-          color="orange"
+          color="green"
           content="Signup"
         />
       </Segment>
